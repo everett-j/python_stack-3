@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <title>My Checkers</title>
+    
+    <style>
+            body {
+              background-color: linen;
+            }
+            
+            table tr td{
+              height: 50px;
+              width: 50px;
+            }
+            .color1{
+              background-color: black;
+            }
+            .color2{
+              background-color: red;
+            }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <!--BEGINNGING OF DYNAMIC DIV-->
+<table>
+{% for i in range(r1): %}
+  <tr>
+    {% for j in range(r2): %}
+    <td class='color{{ (i+j)%2+1 }}'></td>
+    
+    {% endfor %}
+  </tr>
+  
+  {% endfor %}
+
+
+
+
+</table>
+
+
+</div>
+</body>
+</html>
