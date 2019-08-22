@@ -166,11 +166,16 @@ def login(request):
 
 
 def success(request): #NEED TO FIX
-    context = {
+    try:
+        context = {
+             "users" : request.session["id"]  
+        }
+        return render(request, 'shows/success.html', context)
+    except:
+        return render(request, 'shows/denied.html')
         
-        
-    }
-    return render(request, 'shows/success.html', context)
+    
+   
 
 
 def logout(request): 
